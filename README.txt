@@ -1,12 +1,13 @@
 # kafka
 
-https://hub.docker.com/r/wurstmeister/kafka/
+https://github.com/wurstmeister/kafka-docker.git
+
 
 KAFKA_ADVERTISED_HOST_NAME: localhost
 docker-compose -f docker-compose-single-broker.yml up -d
 (may define topics in docker-compose-single-broker.yml)
 
-docker exec -it kafka-docker_kafka_1
+docker exec -it kafka-docker_zookeeper_1 /bin/sh
 
 cd opt/kafka/bin
 

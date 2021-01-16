@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SimpleConsumer {
-    @KafkaListener(topics = "client")
+    @KafkaListener(id = "ListenerSimpleConsumer", topics = {"client", "zoo"})
     public void consumeMessage(String message) {
         System.out.println("try handled" + message);
-        if(message.startsWith("fail")) {
+        if (message.startsWith("fail")) {
             throw new RuntimeException("Soul Error!");
         }
         System.out.println("Got message soul: " + message);
